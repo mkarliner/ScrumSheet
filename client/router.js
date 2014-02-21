@@ -37,6 +37,13 @@ Meteor.Router.add({
 		Session.set('userProfileId', id);
 		return 'edit_user';
 	},
+	'/sprints/:id': function(id) {
+		Session.set('currentSprintId', id);
+		return 'sprint';
+	},
+	'/sprints/create': 'create_sprint',
+	'/sprints': 'sprints',
+	'/tasks/create': 'create_task',
 	'/admin': 'adminusers'
 });
 

@@ -6,6 +6,14 @@ Meteor.startup(function () {
 		// }	
 	});
 	
+	Meteor.publish("sprints", function() {
+			return Sprints.find({});	
+	});
+	
+	Meteor.publish("tasks", function() {
+			return Tasks.find({});	
+	});
+
 	Meteor.publish("allUserData", function () {
 	        return Meteor.users.find({}, {fields: {"username": 1, "_id": 1, "profile": 1}});
 	    });

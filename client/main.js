@@ -1,6 +1,8 @@
 Meteor.startup(function(){
 	Meteor.subscribe("reports");
-	 Meteor.subscribe("allUserData");
+	Meteor.subscribe("sprints");
+	Meteor.subscribe("tasks");
+	Meteor.subscribe("allUserData");
 	
 	
 	// 
@@ -32,10 +34,24 @@ Meteor.startup(function(){
 		
 	});
 	
+	TasksForm.hooks({
+		before: {
+			insert: function(doc) {
+				doc.sprint_id = Session.get("currentSprintId");
+				return doc;
+			}
+		}
+	});
+	
 });
+
+
 
 ReportsForm = new AutoForm(Reports);
 UsersForm = new AutoForm(UserSchema);
+SprintsForm = new AutoForm(Sprints);
+TasksForm = new AutoForm(Tasks);
+
 
 UsersForm.hooks ({
 

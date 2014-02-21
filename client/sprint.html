@@ -1,0 +1,42 @@
+<template name='sprint'>
+    <br />
+    <br />
+    
+    
+    
+    {{#with sprint}}
+    <div>
+   	<a href="/tasks/create" type="button" class="btn btn-primary">New Task</a>
+    <div>
+    <h1>{{name}}
+        {{#each task this}}
+            {{name}}
+        {{/each}}
+    {{/with }}
+</template>
+
+
+
+<template name="create_sprint">
+	{{>insertSprintsForm}}
+</template>
+
+<template name="edit_sprint">
+	{{>editSprintsForm}}
+</template>
+
+<template name="delete_sprint">
+	<div>
+	{{>deleteSprintsForm sprint}}
+	</div>
+
+</template>
+
+
+<template name="editSprintForm">
+    {{quickForm schema=SprintsForm type="update"  buttonClasses="btn" buttonContent="Update" doc=selectedUser }}
+</template>
+
+<template name="insertSprintForm">
+    {{quickForm schema=SprintsForm type="insert"  buttonClasses="btn" buttonContent="Create" doc=selectedUser }}
+</template>

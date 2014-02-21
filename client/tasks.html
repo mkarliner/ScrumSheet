@@ -1,0 +1,37 @@
+<template name='task'>
+    <br />
+    <br />
+    
+    {{#with task}}
+    <h1>{{name}}
+        {{#each task this}}
+            {{name}}
+        {{/each}}
+    {{/with }}
+</template>
+
+
+
+<template name="create_task">
+	{{>insertTasksForm}}
+</template>
+
+<template name="edit_task">
+	{{>editTasksForm}}
+</template>
+
+<template name="delete_task">
+	<div>
+	{{>deleteTasksForm task}}
+	</div>
+
+</template>
+
+
+<template name="editTasksForm">
+    {{quickForm schema=TasksForm type="update"  buttonClasses="btn" buttonContent="Update" doc=selectedUser }}
+</template>
+
+<template name="insertTasksForm">
+    {{quickForm schema=TasksForm type="insert"  buttonClasses="btn" buttonContent="Create" doc=selectedUser }}
+</template>

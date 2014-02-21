@@ -1,0 +1,24 @@
+<template name="sprints">
+ <h1> Sprints</h1>
+ <div>
+	<a href="/sprints/create" type="button" class="btn btn-primary">New Report</a>
+ <div>
+ <div>
+     <table border=1>
+         <tr>
+             <th>Name</th>
+         </tr>
+         {{#each sprints}}
+         
+            <tr>
+                <td><a href="/sprints/{{_id}}">{{ name }}</a></td>
+            </tr>
+        
+         {{/each}}   
+     </table>
+
+
+
+
+
+</template>
