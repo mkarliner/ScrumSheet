@@ -12,7 +12,7 @@ Meteor.startup(function(){
 	// });
 	ReportsForm.hooks ({
 		before: {
-	      remove: function(id) {
+	        remove: function(id) {
 			console.log("Removing", id);
 	        var name = Reports.findOne(id).who;
 	        return confirm("Remove " + name + "?");
@@ -38,9 +38,24 @@ Meteor.startup(function(){
 		before: {
 			insert: function(doc) {
 				doc.sprint_id = Session.get("currentSprintId");
+				console.log("Creating task: ", doc);
 				return doc;
 			}
-		}
+		},
+		after: {
+			insert: function(error, results, template) {
+				console.log("Created task: ", error, "res", results, "temp", template);
+				Tasks.update({_id: results}, {$set: {"sprint_id": Session.get("currentSprintId") }});
+				console.log("TASK: ", Tasks.findOne({_id: results }));
+				Meteor.Router.to("/sprints/"+Session.get("currentSprintId"));
+
+			}
+		},
+		// onSubmit: function(res, set, record) {
+		// 	//doc.sprint_id = Session.get("currentSprintId");
+		// 	console.log("submitting task: ", record);
+		// 	return true;
+		// }
 	});
 	
 });

@@ -37,11 +37,11 @@ Meteor.Router.add({
 		Session.set('userProfileId', id);
 		return 'edit_user';
 	},
+	'/sprints/create': 'create_sprint',
 	'/sprints/:id': function(id) {
 		Session.set('currentSprintId', id);
 		return 'sprint';
 	},
-	'/sprints/create': 'create_sprint',
 	'/sprints': 'sprints',
 	'/tasks/create': 'create_task',
 	'/admin': 'adminusers'
@@ -57,8 +57,13 @@ Meteor.Router.filters({
         } else {
             return 'signin';
         }
-    }
+    },
+	'routerTrace': function(page) {
+		console.log("GOT HERE", page);
+		return page;
+	}
 });
 
 // applies to all pages
 Meteor.Router.filter('checkLoggedIn');
+Meteor.Router.filter('routerTrace');

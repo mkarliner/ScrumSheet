@@ -1,9 +1,5 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master",
-    "commit": "cbde5bd4875524f3ade7f3baef417a43ec1b9474"
-  },
+  "meteor": {},
   "dependencies": {
     "basePackages": {
       "houston": {},
@@ -19,15 +15,10 @@
         "tag": "v1.0.0",
         "commit": "e98660af09cb3e4e90848abfe943a06e7068cccc"
       },
-      "autoform": {
-        "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.4.12",
-        "commit": "043d05dfb9dc8a4df23114f621cbe4f4634dab46"
-      },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.3.4",
-        "commit": "23ab6f56f9d65eb46c152480a8d8097867a8bb38"
+        "tag": "v0.3.8",
+        "commit": "69aff2a21ba3c382f915e1f9dbcca2ad38edb6d5"
       },
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
@@ -36,8 +27,8 @@
       },
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v0.3.7",
-        "commit": "5dd0d142c870647b910be80bc777b96f0dd45e5e"
+        "tag": "v3.1.0-1",
+        "commit": "329dccb08bfc18c635676dea600ac9953162cda9"
       },
       "accounts-admin-ui": {
         "git": "https://github.com/kenyee/meteor-accounts-admin-ui.git",
@@ -56,18 +47,13 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.2",
-        "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+        "tag": "v0.6.4",
+        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.2.32",
-        "commit": "c67bf1d25b847ff4330f95bbda891c5fad3fb15f"
-      },
-      "moment": {
-        "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.5.1",
-        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+        "tag": "v0.2.39",
+        "commit": "02afc77cba60ce5829e453567ebac76e4b69bc81"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

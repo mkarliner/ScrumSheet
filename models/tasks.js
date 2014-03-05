@@ -2,6 +2,16 @@ Tasks = new Meteor.Collection2("tasks", {
 	schema: {
 		name: {
 			type: "String",
+		},
+		sprint_id: {
+			type: "String",
+			// autoValue: function() {
+			// 	return Session.get("currentSprintId");
+			// },
+			optional: true,
+		},
+		priority: {
+			type: "Integer"
 		}
 	}
 });
@@ -20,3 +30,11 @@ Tasks.allow({
 	},
 	fetch: ['name']
 });
+
+
+// Tasks.beforeInsert = function(obj) {
+// 
+// 	obj.sprint_id = Session.get("currentSprintId");
+// 	console.log("Before task inserts: ", obj);
+// 	return obj;
+// };
